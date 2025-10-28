@@ -1,0 +1,14 @@
+@import './utils/variables.css';
+@import '../css/tailwind.css';
+
+/* Components */
+/* @import './components'; */
+
+/* Layout */
+@import './layout/body.css';
+@import './layout/footer.css';
+@import './layout/header.css';
+
+/* Themes */
+@import './themes/dark.css';
+@import './themes/responsive.css';

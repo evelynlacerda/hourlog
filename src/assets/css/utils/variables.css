@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors */
+    --color-dark100: #101010;
+    --color-dark200: #1b1b1b;
+    --color-dark300: #242424;
+    --color-dark400: #323232;
+    --color-dark500: #4E4E4E;
+    --color-dark700: #7d7d7d;
+
+    --color-orange500: #FF9932;
+
+    --color-green400: #0C8739;
+    --color-green800: #BDEBCD;
+
+    --color-yellow400: #DDA200;
+    --color-yellow800: #FEF9C3;
+
+    --color-red400: #AF0000;
+    --color-red800: #FEE2E2;
+
+    --shadow-formbox: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
