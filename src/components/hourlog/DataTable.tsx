@@ -13,6 +13,15 @@ import {
 	type ColumnDef,
 } from "@tanstack/react-table";
 
+declare module "@tanstack/react-table" {
+	interface ColumnMeta<TData, TValue> {
+        data?: TData;
+        value?: TValue;
+		width?: string | number;
+		align?: "left" | "center" | "right";
+	}
+}
+
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];
 	data: TData[];
@@ -28,25 +37,42 @@ export function DataTable<TData, TValue>({
 		getCoreRowModel: getCoreRowModel(),
 	});
 
+    const textAlignClass = (align?: "left" | "center" | "right") => {
+			switch (align) {
+				case "center":
+					return "text-center";
+				case "right":
+					return "text-right";
+				default:
+					return "text-left";
+			}
+		};
+
+
 	return (
 		<div>
 			<Table>
 				<TableHeader>
 					{table.getHeaderGroups().map((headerGroup) => (
 						<TableRow key={headerGroup.id}>
-							{headerGroup.headers.map((header, idx) => {
-								const isLastItem = idx === headerGroup.headers.length - 1;
+							{headerGroup.headers.map((header) => {
+								const width = header.column.columnDef.meta?.width;
+                                const align = header.column.columnDef.meta?.align;
 
-                                return (
-                                    <TableHead key={header.id} className={`text-dark700 uppercase text-xs ${isLastItem ? "text-center" : ""}`}>
-									{header.isPlaceholder
-										? null
-										: flexRender(
-												header.column.columnDef.header,
-												header.getContext()
-										  )}
-								</TableHead>
-                                )
+								return (
+									<TableHead
+										key={header.id}
+                                        style={width ? { width: `${width}%` } : {}}
+										className={`text-dark700 uppercase text-xs ${textAlignClass(align)}`}
+									>
+										{header.isPlaceholder
+											? null
+											: flexRender(
+													header.column.columnDef.header,
+													header.getContext()
+											  )}
+									</TableHead>
+								);
 							})}
 						</TableRow>
 					))}
@@ -64,7 +90,10 @@ export function DataTable<TData, TValue>({
 						))
 					) : (
 						<TableRow>
-							<TableCell colSpan={columns.length} className="h-24 text-center text-white">
+							<TableCell
+								colSpan={columns.length}
+								className="h-24 text-center text-white"
+							>
 								Nenhum resultado encontrado.
 							</TableCell>
 						</TableRow>

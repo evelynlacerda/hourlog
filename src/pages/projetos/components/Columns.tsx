@@ -8,6 +8,7 @@ export const columns: ColumnDef<Projetos>[] = [
 	{
 		accessorKey: "status",
 		header: "Status",
+        meta: { width: 14 },
 		cell: ({ row }) => {
 			const status = row.getValue("status");
 			const info = statusColor[status as keyof typeof statusColor];
@@ -27,11 +28,13 @@ export const columns: ColumnDef<Projetos>[] = [
 	},
 	{
 		accessorKey: "horasTotais",
+        meta: { width: 8, align: 'center' },
 		header: "Horas",
-		cell: ({ row }) => <span>{row.getValue("horasTotais")}h</span>,
+		cell: ({ row }) => <span className="flex justify-center">{row.getValue("horasTotais")}h</span>,
 	},
 	{
-		id: "actions",
+        id: "actions",
+        meta: { width: 8, align: 'center' },
 		header: "Ações",
 		cell: ({ row }) => {
 			const projeto = row.original;
