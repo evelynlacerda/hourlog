@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import api from "@/lib/api";
 import { useState } from "react";
 import type { LoginFormInputs, LoginResponse } from "@/types/Auth";
-import { Eye, EyeClosed } from "lucide-react";
+import { Eye, EyeClosed, Loader2 } from "lucide-react";
 
 export default function Login() {
 	const {
@@ -15,9 +15,12 @@ export default function Login() {
 	} = useForm<LoginFormInputs>();
 
 	const [erro, setErro] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 	const navigate = useNavigate();
 
 	const onSubmit = async (data: LoginFormInputs) => {
+        setIsLoading(true);
+		setErro("");
 		try {
 			const response = await api.post<LoginResponse>("/login", data);
 			localStorage.setItem("token", response.data.token);
@@ -26,6 +29,8 @@ export default function Login() {
 			navigate("/dashboard");
 		} catch {
 			setErro("E-mail ou senha incorretos.");
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
@@ -104,10 +109,18 @@ export default function Login() {
 				</div>
 
 				<Button
+                    disabled={isLoading}
 					type="submit"
 					className="w-full bg-orange500 rounded-md text-dark100 font-bold uppercase hover:bg-orange500 transition cursor-pointer"
 				>
-					Entrar
+					{isLoading ? (
+						<>
+							<Loader2 className="animate-spin" size={18} />
+							Entrando...
+						</>
+					) : (
+						"Entrar"
+					)}
 				</Button>
 			</form>
 
