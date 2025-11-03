@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import type { AxiosError } from "axios";
 import { useTarefa } from "@/hooks/useTarefas";
 import { diffTarefas } from "@/utils/syncTarefas";
+import { Loading } from "@/helpers/Loading";
 
 const EditarProjeto = () => {
 	const navigate = useNavigate();
@@ -78,10 +79,10 @@ const EditarProjeto = () => {
 		}
 	};
 
-	if (isLoading || !projeto) return <div>Carregando...</div>;
+	if (isLoading || !projeto) return <Loading />;
 
 	return (
-		<main className="w-full p-8 flex flex-col h-[calc(100vh-128px)] overflow-y-scroll">
+		<main className="w-full pl-12 p-8 flex flex-col h-[calc(100vh-128px)] overflow-y-scroll">
 			<h2 className="text-lg font-bold uppercase text-white mb-4">
 				Editar Projeto
 			</h2>
