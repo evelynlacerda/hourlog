@@ -16,7 +16,7 @@ const Dashboard = () => {
     const pausados = projetos.filter((p) => p.status === "PAUSADO").length;
 
     return (
-			<div className="w-full h-fit flex flex-wrap gap-8 p-8">
+			<div className="w-full h-fit flex flex-wrap gap-8 pl-12 p-8">
 				<div className="flex flex-col gap-2 grow bg-dark200 p-6 rounded-lg">
 					<h3 className="uppercase text-white font-bold text-xl">
 						Adicionados
@@ -27,7 +27,9 @@ const Dashboard = () => {
 					<h3 className="uppercase text-white font-bold text-xl">
 						Em andamento
 					</h3>
-					<span className="text-orange500 font-black text-6xl">{emAndamento}</span>
+					<span className="text-orange500 font-black text-6xl">
+						{emAndamento}
+					</span>
 				</div>
 				<div className="flex flex-col gap-2 grow bg-dark200 p-6 rounded-lg">
 					<h3 className="uppercase text-white font-bold text-xl">Pausados</h3>

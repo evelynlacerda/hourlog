@@ -37,7 +37,7 @@ const IncluirProjeto = () => {
 	};
 
 	return (
-		<main className="w-full p-8">
+		<main className="w-full pl-12 p-8">
 			<h2 className="text-lg font-bold uppercase text-white mb-4">
 				Novo Projeto
 			</h2>
