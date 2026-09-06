@@ -9,6 +9,9 @@
 @import './layout/footer.css';
 @import './layout/header.css';
 
+/* Pages */
+@import './pages/politicas/privacy-policy.css';
+
 /* Themes */
 @import './themes/dark.css';
 @import './themes/responsive.css';

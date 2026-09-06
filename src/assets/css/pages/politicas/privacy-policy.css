@@ -1,0 +1,11 @@
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.ul-list {
+    ul {
+        @apply list-disc ps-8 leading-8;
+    }
+}

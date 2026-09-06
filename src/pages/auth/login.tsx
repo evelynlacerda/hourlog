@@ -43,7 +43,7 @@ export default function Login() {
 
 	return (
         <>
-            <div className="w-full h-[calc(100vh-64px)] flex flex-col items-center justify-center">
+            <div className="auth-screen w-full h-[calc(100vh-64px)] flex flex-col items-center justify-center max-md:h-screen max-md:shrink">
                 <div className="flex flex-col items-center gap-0.5 bg-dark100 max-w-sm w-full py-4 rounded-t-xl">
                     <h1 className="text-xl uppercase font-bold text-orange500">
                         Hourlog

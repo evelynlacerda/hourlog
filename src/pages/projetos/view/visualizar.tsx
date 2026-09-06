@@ -50,9 +50,9 @@ const VisualizarProjeto = () => {
 	const tarefasOrdenadas = [...(projeto.tarefas ?? [])].sort(sortTarefas);
 
 	return (
-		<main className="w-full pl-12 p-8 flex flex-col h-[calc(100vh-128px)] overflow-y-auto">
+		<main className="page-container w-full pl-12 p-8 flex flex-col h-[calc(100vh-128px)] overflow-y-auto">
 			{/* Header */}
-			<div className="flex items-start justify-between gap-4 mb-8">
+			<div className="projeto-view__head flex items-start justify-between gap-4 mb-8">
 				<div>
 					<h2 className="text-lg font-bold uppercase text-white">
 						{projeto.nomeProjeto || "Projeto"}
@@ -85,7 +85,7 @@ const VisualizarProjeto = () => {
 
 			{/* Lista de tarefas (somente leitura) */}
 			<section className="mt-2">
-				<div className="grid grid-cols-[10%_1fr_10%_10%] gap-3 text-xs uppercase text-dark500 pb-2 border-b border-dark500/40">
+				<div className="projeto-view__row grid grid-cols-[10%_1fr_10%_10%] gap-3 text-xs uppercase text-dark500 pb-2 border-b border-dark500/40">
 					<div>Data</div>
 					<div>Descrição</div>
 					<div className="text-center">Hora Inicial</div>
@@ -111,7 +111,7 @@ const VisualizarProjeto = () => {
 								className="py-4 border-b border-dashed border-dark400"
 							>
 								{/* Linha principal */}
-								<div className="grid grid-cols-[10%_1fr_10%_10%] gap-3 items-start">
+								<div className="projeto-view__row grid grid-cols-[10%_1fr_10%_10%] gap-3 items-start">
 									<div className="text-white">{dataLabel}</div>
 									<div className="text-white flex flex-col">
 										<span>{t.descricao || "—"}</span>

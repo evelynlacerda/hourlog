@@ -16,7 +16,7 @@ const Dashboard = () => {
     const pausados = projetos.filter((p) => p.status === "PAUSADO").length;
 
     return (
-			<div className="w-full h-fit flex flex-wrap gap-8 pl-12 p-8">
+			<div className="page-container dashboard-grid w-full h-fit flex flex-wrap gap-8 pl-12 p-8">
 				<div className="flex flex-col gap-2 grow bg-dark200 p-6 rounded-lg">
 					<h3 className="uppercase text-white font-bold text-xl">
 						Adicionados

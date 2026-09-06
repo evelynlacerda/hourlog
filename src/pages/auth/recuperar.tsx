@@ -7,7 +7,7 @@ export default function RecuperarSenha() {
     const {register, handleSubmit, errors, loading, onSubmit} = usePassword("forgot");
 
 	return (
-		<div className="w-full h-screen flex flex-col items-center justify-center">
+		<div className="auth-screen w-full h-screen flex flex-col items-center justify-center">
 			<div className="flex flex-col items-center gap-0.5 bg-dark100 max-w-sm w-full py-4 rounded-t-xl">
 				<h1 className="text-xl uppercase font-bold text-orange500">Hourlog</h1>
 				<p className="text-dark700 text-sm">Recupere o acesso à sua conta.</p>

@@ -7,7 +7,7 @@ const Structor = () => {
     return (
         <>
             <Header/>
-            <div className="flex">
+            <div className="flex app-shell">
                 <Sidebar/>
                 <Outlet/>
             </div>

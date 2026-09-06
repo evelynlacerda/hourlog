@@ -82,7 +82,7 @@ const EditarProjeto = () => {
 	if (isLoading || !projeto) return <Loading />;
 
 	return (
-		<main className="w-full pl-12 p-8 flex flex-col h-[calc(100vh-128px)] overflow-y-scroll">
+		<main className="page-container w-full pl-12 p-8 flex flex-col h-[calc(100vh-128px)] overflow-y-scroll">
 			<h2 className="text-lg font-bold uppercase text-white mb-4">
 				Editar Projeto
 			</h2>

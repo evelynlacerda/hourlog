@@ -43,7 +43,7 @@ export default function Relatorios() {
 		: "Selecione um projeto";
 
 	return (
-		<main className="w-full pl-12 p-8">
+		<main className="page-container w-full pl-12 p-8">
 			<h2 className="text-lg font-bold uppercase text-white mb-4">
 				Relatórios
 			</h2>

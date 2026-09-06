@@ -6,7 +6,7 @@ const ProjetosIndex = () => {
     const { getProjetos } = useProjetos();
 
 	return (
-		<div className="w-full pl-12 p-8">
+		<div className="page-container w-full pl-12 p-8">
 			<h2 className="uppercase text-base text-white font-bold mb-8">
 				Projetos
 			</h2>

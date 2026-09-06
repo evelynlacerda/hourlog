@@ -50,7 +50,7 @@ export function DataTable<TData, TValue>({
 
 
 	return (
-		<div>
+		<div className="data-table-wrap w-full overflow-x-auto">
 			<Table>
 				<TableHeader>
 					{table.getHeaderGroups().map((headerGroup) => (

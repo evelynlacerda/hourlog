@@ -1,4 +1,4 @@
-import { FileChartColumn, FilePlus2, Files } from "lucide-react";
+import { FileChartColumn, FilePlus2, Files, LayoutDashboard } from "lucide-react";
 import type { ElementType } from "react";
 
 interface MenuProps {
@@ -27,4 +27,14 @@ export const MENU_ITEMS: MenuProps[] = [
 		icon: FileChartColumn,
 		path: "/relatorios",
 	},
+];
+
+export const NAV_ITEMS: MenuProps[] = [
+	{
+		id: 0,
+		title: "Dashboard",
+		icon: LayoutDashboard,
+		path: "/dashboard",
+	},
+	...MENU_ITEMS,
 ];

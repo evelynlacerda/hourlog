@@ -6,7 +6,7 @@ export default function ResetPassword() {
     const {errors, handleSubmit, loading, onSubmit, register, watch} = usePassword("reset");
 
     return (
-			<div className="w-full h-screen flex flex-col items-center justify-center">
+			<div className="auth-screen w-full h-screen flex flex-col items-center justify-center">
 				<div className="flex flex-col items-center gap-0.5 bg-dark100 max-w-sm w-full py-4 rounded-t-xl">
 					<h1 className="text-xl uppercase font-bold text-orange500">
 						Hourlog

@@ -18,7 +18,7 @@ type Props = {
 };
 
 export const TarefaInput = ({ index, register, remove, control, isLast }: Props) => (
-	<div className="grid gap-3 items-start grid-cols-[16%_1fr_12%_12%_32px]">
+	<div className="tarefa-grid grid gap-3 items-start grid-cols-[16%_1fr_12%_12%_32px]">
 		{/* Data */}
 		<Controller
 			name={`tarefas.${index}.data`}
@@ -93,7 +93,7 @@ export const TarefaInput = ({ index, register, remove, control, isLast }: Props)
 
 		{/* 2ª linha: textarea ocupa as 4 primeiras colunas (mesma largura do grupo) */}
 		<div className={`
-				col-span-4 w-full border-dashed border-dark500/50
+				tarefa-grid__detail col-span-4 w-full border-dashed border-dark500/50
 				${isLast ? "border-b-0 pb-0 mb-0" : "border-b pb-6 mb-4"}`}
 		>
 			<Textarea

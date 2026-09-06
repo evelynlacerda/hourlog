@@ -47,7 +47,7 @@ const FormProjeto = ({
 			onSubmit={handleSubmit(onSubmit)}
 			className="flex flex-col flex-1 space-y-8"
 		>
-			<div className="flex gap-4 bg-dark200 p-8 rounded-2xl shadow-formbox">
+			<div className="form-projeto__head flex gap-4 bg-dark200 p-8 rounded-2xl shadow-formbox">
 				<Input
 					className="border-dashed"
 					placeholder="Nome do projeto"
@@ -58,7 +58,7 @@ const FormProjeto = ({
 					control={control}
 					rules={{ required: true }}
 					render={({ field }) => (
-						<div className="w-[40%]">
+						<div className="form-projeto__status w-[40%]">
 							<Select value={field.value ?? ""} onValueChange={field.onChange}>
 								<SelectTrigger className="w-full border-dashed text-white">
 									<SelectValue placeholder="Selecione o status" />
