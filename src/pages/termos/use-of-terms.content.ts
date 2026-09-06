@@ -315,15 +315,25 @@ export const useTermsContent: LegalContentNode[] = [
             },
             {
                 type: "paragraph",
-                text: "Em caso de dúvidas sobre estes Termos de Uso, entre em contato pelo e-mail: [contato@seudominio.com.br].",
+                text: "Em caso de dúvidas sobre estes Termos de Uso, entre em contato pelo e-mail:",
+            },
+            {
+                type: "span",
+                text: "helperdevbr@gmail.com",
+                variant: "contact",
             },
             {
                 type: "paragraph",
-                text: "Para assuntos relacionados à privacidade e proteção de dados pessoais, consulte nossa Política de Privacidade ou entre em contato pelo e-mail: [privacidade@seudominio.com.br].",
+                text: "Para assuntos relacionados à privacidade e proteção de dados pessoais, consulte nossa Política de Privacidade ou entre em contato pelo mesmo e-mail.",
             },
             {
                 type: "paragraph",
-                text: "Responsável pelo Hourlog: [nome da empresa ou responsável pelo projeto].",
+                text: "Responsável pelo Hourlog:",
+            },
+            {
+                type: "span",
+                text: "Evelyn dos Santos Lacerda",
+                variant: "contact",
             },
         ],
     },

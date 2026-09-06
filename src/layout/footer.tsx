@@ -8,7 +8,7 @@ const Footer = () => {
       >
         <ul className="footer-links flex text-center gap-2">
           <NavLink
-            to="/politica-de-privacidade"
+            to="/privacidade"
             className="hover:text-orange500"
           >
             Política de Privacidade
@@ -18,7 +18,7 @@ const Footer = () => {
             Política de Cookies
           </NavLink>
           {" "}<span aria-hidden="true">•</span>{" "}
-          <NavLink to="/termos-de-uso" className="hover:text-orange500">
+          <NavLink to="/termos" className="hover:text-orange500">
             Termos de Uso
           </NavLink>
           {" "}<span aria-hidden="true">•</span>{" "}

@@ -9,17 +9,21 @@ import IncluirProjeto from "@/pages/projetos/add/incluir";
 
 import RequireAuth from "@/routes/requireAuth";
 import PublicRoutes from "@/routes/publicRoutes";
+import ScrollToTop from "@/routes/scrollToTop";
 import ResetPasswordSoon from "@/pages/soon/resetPassword";
 import Relatorios from "@/pages/relatorios";
 import VisualizarProjeto from "@/pages/projetos/view/visualizar";
 import PrivacyPolicy from "@/pages/politica/privacyPolicy";
 import TermsOfUse from "@/pages/termos/useTerms";
+import CookiesPolicy from "@/pages/cookies/cookiesPolicy";
+import Contact from "@/pages/contato/contact";
 // import RecuperarSenha from "@/pages/auth/recuperar";
 // import ResetPassword from "@/pages/auth/resetPassword";
 
 const Router = () => {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 {/* públicas (bloqueadas se já logado) */}
                 <Route element={<PublicRoutes />}>
@@ -58,12 +62,11 @@ const Router = () => {
                     element={<Navigate to="/dashboard" replace />}
                 />
 
-                {/* politicas e termos */}
-                <Route
-                    path="/politica-de-privacidade"
-                    element={<PrivacyPolicy />}
-                />
-                <Route path="/termos-de-uso" element={<TermsOfUse />} />
+                {/* politicas, termos e contato */}
+                <Route path="/privacidade" element={<PrivacyPolicy />} />
+                <Route path="/termos" element={<TermsOfUse />} />
+                <Route path="/cookies" element={<CookiesPolicy />} />
+                <Route path="/contato" element={<Contact />} />
             </Routes>
         </BrowserRouter>
     );
